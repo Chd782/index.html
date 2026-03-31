@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio — Chadi Gaouzi</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+<body>
+
+<!-- MODAL CV -->
+<div class="modal-overlay" id="cvModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('cvModal').classList.remove('open')">&#x2715;</button>
+    <div class="cv-header">
+      <div>
+        <div class="cv-name">Chadi Gaouzi</div>
+        <div class="cv-subtitle">Etudiant BTS SIO &mdash; Recherche d'alternance &mdash; Ile-de-France (78)</div>
+      </div>
+      <div class="cv-contact">30 chemins des meuniers, 78200 Buchelay<br/>07 62 17 66 32<br/>chadi.gaouzi@gmail.com</div>
+    </div>
+    <div class="cv-grid">
+      <div>
+        <div class="cv-stitle">Experience professionnelle</div>
+        <div class="cv-role">Assistant Communication &amp; Gestion Digitale</div>
+        <div class="cv-co">Sport Attitude &mdash; Mantes-la-Jolie</div>
+        <div class="cv-dt">Sept. 2024 &ndash; Nov. 2025</div>
+        <div class="cv-dd">Publications Instagram/Facebook, gestion boite mail, mise a jour du site internet de l'association.</div>
+        <div class="cv-role">Developpement &amp; Correction de sites web</div>
+        <div class="cv-co">Particuliers &mdash; Buchelay (78)</div>
+        <div class="cv-dt">2024 &ndash; 2025</div>
+        <div class="cv-dd">Creation et correction de sites internet pour des clients particuliers. HTML, CSS, JavaScript.</div>
+        <div class="cv-role">Maintenance des systemes informatiques</div>
+        <div class="cv-co">Anatomo Cyto Pathologiste &mdash; Vernouillet</div>
+        <div class="cv-dt">Stage 3eme &mdash; 2022</div>
+        <div class="cv-dd">Correction bugs, installation logiciels, securite Firewall/pare-feu.</div>
+        <div class="cv-stitle">Formation</div>
+        <div class="cv-role">BTS SIO &mdash; 1ere annee (en cours)</div>
+        <div class="cv-co">Lycee de Plaisir, Plaisir (78)</div>
+        <div class="cv-dt">2025 &ndash; En cours</div>
+        <div class="cv-role">Baccalaureat Technologique STMG</div>
+        <div class="cv-co">Lycee L. Sedar Senghor, Magnanville</div>
+        <div class="cv-dt">2024 &ndash; 2025</div>
+        <div class="cv-role">Brevet des Colleges &mdash; Mention Bien</div>
+        <div class="cv-co">College Georges Sand, Magnanville</div>
+        <div class="cv-dt">2021 &ndash; 2022</div>
+      </div>
+      <div>
+        <div class="cv-stitle">Competences techniques</div>
+        <span class="cv-pill">HTML / CSS</span><span class="cv-pill">JavaScript</span><span class="cv-pill">SQL</span><span class="cv-pill">Python (MOOC)</span><span class="cv-pill">Excel / MATLAB</span><span class="cv-pill">Canva</span><span class="cv-pill">Reseaux &amp; Systemes</span><span class="cv-pill">CyberSecurite</span><span class="cv-pill">Windows / Linux</span>
+        <div class="cv-stitle" style="margin-top:1rem">Competences humaines</div>
+        <span class="cv-pill">Travail d'equipe</span><span class="cv-pill">Creativite</span><span class="cv-pill">Communication</span><span class="cv-pill">Organisation</span><span class="cv-pill">Aisance orale</span>
+        <div class="cv-stitle" style="margin-top:1rem">Langues</div>
+        <span class="cv-pill">Francais (Expert)</span><span class="cv-pill">Anglais (Intermediaire)</span><span class="cv-pill">Arabe</span>
+        <div class="cv-stitle" style="margin-top:1rem">Divers</div>
+        <span class="cv-pill">Permis B &mdash; Vehicule</span><span class="cv-pill">Mecanique automobile</span><span class="cv-pill">Coach Jiu-Jitsu Bresilien</span>
+        <div class="cv-stitle" style="margin-top:1rem">Projet</div>
+        <div class="cv-dd">Apres le BTS SIO, poursuite en licence professionnelle (reseaux ou cybersecurite).</div>
+      </div>
+    </div>
+    <button class="cv-dl" onclick="alert('Connectez votre fichier CV.docx ici')"><i class="fa fa-download"></i> Telecharger le CV</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="#home">Chadi Gaouzi<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">A propos</a></li>
+    <li><a href="#competences">Competences</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#experience">Experiences</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#bts">BTS SIO</a></li>
+    <li><a href="#alternance">Alternance</a></li>
+    <li><a href="#veille">Veille</a></li>
+    <li><a href="#divers">Divers</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-cv-btn" onclick="document.getElementById('cvModal').classList.add('open')">
+      <i class="fa fa-file-alt"></i> Mon CV
+    </button>
+    <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" title="Mode lumiere / sombre">
+      <i class="fa fa-moon" id="themeIcon"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="blob b3"></div><div class="blob b4"></div>
+  <div class="hero-badge"><span class="dot"></span> Recherche d'alternance &mdash; Ile-de-France</div>
+  <h1 class="hero-title">
+    Bonjour, je suis<br>
+    <span class="name">Chadi Gaouzi</span><br>
+    <span class="role">Etudiant BTS SIO &middot; Lycee de Plaisir (78)</span>
+  </h1>
+  <p class="hero-desc">Passionne par les reseaux, la cybersecurite et le developpement web. Toujours pret a apprendre, a me depasser et a contribuer a des projets concrets.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn btn-rgb"><i class="fa fa-envelope"></i> Nous contacter</a>
+    <button class="btn btn-outline" onclick="document.getElementById('cvModal').classList.add('open')"><i class="fa fa-file-alt"></i> Voir mon CV</button>
+    <a href="#about" class="btn btn-outline">Decouvrir mon profil &#8595;</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-alt">
+  <span class="section-tag">A propos de moi</span>
+  <h2 class="section-title reveal">Mon <span>introduction</span></h2>
+  <div class="about-grid reveal">
+    <div class="about-photo-wrap"><div class="about-photo">CG</div></div>
+    <div class="about-content">
+      <p>Actuellement en <strong>premiere annee de BTS SIO</strong> au lycee de Plaisir, je suis passionne par l'informatique, la cybersecurite, les reseaux et le developpement web. Curieux et motive, je developpe mes competences via des projets concrets et des MOOC.</p>
+      <p>Avec une experience en <strong>maintenance informatique</strong>, <strong>gestion de reseaux sociaux</strong> et <strong>developpement de sites web</strong> pour des particuliers, je suis operationnel et pret a m'investir en <strong>alternance</strong>.</p>
+      <p>En dehors de l'informatique, je suis <strong>coach de Jiu-Jitsu Bresilien</strong> pour les juveniles et passionne de mecanique automobile &mdash; deux disciplines qui m'ont appris la rigueur, la patience et le travail d'equipe.</p>
+      <div class="about-stats">
+        <div class="stat"><span class="num">3</span><span class="lbl">Experiences</span></div>
+        <div class="stat"><span class="num">2+</span><span class="lbl">Sites realises</span></div>
+        <div class="stat"><span class="num">BTS</span><span class="lbl">SIO 1ere annee</span></div>
+        <div class="stat"><span class="num">B</span><span class="lbl">Permis de conduire</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES -->
+<section id="competences">
+  <span class="section-tag">Mes competences</span>
+  <h2 class="section-title reveal">Niveau de <span>competence</span></h2>
+  <div class="reveal">
+    <div class="skills-tabs">
+      <button class="tab-btn active" onclick="showTab('dev',this)">Developpement</button>
+      <button class="tab-btn" onclick="showTab('sys',this)">Systemes &amp; Reseaux</button>
+      <button class="tab-btn" onclick="showTab('outils',this)">Outils</button>
+      <button class="tab-btn" onclick="showTab('humaines',this)">Competences humaines</button>
+    </div>
+    <div class="skills-panel active" id="panel-dev">
+      <div class="skills-cat-title">Langages &amp; Developpement</div>
+      <div class="skills-cat-sub">Langages de programmation et technologies web</div>
+      <div class="skills-list">
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">HTML / CSS <small>Structure &amp; mise en page web</small></span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">JavaScript <small>Front-end &amp; interactivite</small></span><span class="skill-pct">55%</span></div><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">SQL <small>Bases de donnees relationnelles</small></span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Python <small>Scripts &amp; automatisation (MOOC)</small></span><span class="skill-pct">45%</span></div><div class="skill-bar"><div class="skill-fill" data-width="45"></div></div></div>
+      </div>
+    </div>
+    <div class="skills-panel" id="panel-sys">
+      <div class="skills-cat-title">Systemes d'exploitation &amp; Reseaux</div>
+      <div class="skills-cat-sub">Administration et configuration — MOOC Reseaux &amp; Cybersecurite</div>
+      <div class="skills-list">
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Windows <small>Administration &amp; configuration</small></span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Linux <small>Administration systeme (en cours)</small></span><span class="skill-pct">50%</span></div><div class="skill-bar"><div class="skill-fill" data-width="50"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Cybersecurite <small>Firewall, pare-feu, MOOC</small></span><span class="skill-pct">55%</span></div><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Reseaux <small>Administration &amp; protocoles</small></span><span class="skill-pct">50%</span></div><div class="skill-bar"><div class="skill-fill" data-width="50"></div></div></div>
+      </div>
+    </div>
+    <div class="skills-panel" id="panel-outils">
+      <div class="skills-cat-title">Outils &amp; Logiciels</div>
+      <div class="skills-cat-sub">Outils bureautiques, creatifs et techniques</div>
+      <div class="skills-list">
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Excel / Word <small>Suite Microsoft Office</small></span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Canva <small>Creation visuels &amp; reseaux sociaux</small></span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">MATLAB <small>Calcul scientifique</small></span><span class="skill-pct">40%</span></div><div class="skill-bar"><div class="skill-fill" data-width="40"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Reseaux sociaux <small>Instagram, Facebook, gestion de contenu</small></span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+      </div>
+    </div>
+    <div class="skills-panel" id="panel-humaines">
+      <div class="skills-cat-title">Competences humaines</div>
+      <div class="skills-cat-sub">Qualites developpees dans mes experiences et activites</div>
+      <div class="skills-list">
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Travail d'equipe</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Communication &amp; Aisance orale</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Creativite &amp; Curiosite</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Organisation &amp; Rigueur</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours" class="section-alt">
+  <span class="section-tag">Formation</span>
+  <h2 class="section-title reveal">Mon parcours <span>scolaire</span></h2>
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-date">2025 &ndash; En cours</div>
+      <div class="tl-title">BTS SIO &mdash; Services Informatiques aux Organisations</div>
+      <div class="tl-place">Lycee de Plaisir, Plaisir (78)</div>
+      <div class="tl-body">Premiere annee de BTS SIO. Reseaux, cybersecurite, administration systeme, developpement et gestion de projets informatiques.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Sept. 2024 &ndash; Juil. 2025</div>
+      <div class="tl-title">Baccalaureat Technologique STMG</div>
+      <div class="tl-place">Lycee Leopold Sedar Senghor, Magnanville (78)</div>
+      <div class="tl-body">Option Systemes d'information et de Gestion (SIG). Formation aux systemes d'information, a la gestion et aux outils numeriques en entreprise.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Sept. 2021 &ndash; Juil. 2022</div>
+      <div class="tl-title">Brevet des Colleges &mdash; Mention Bien</div>
+      <div class="tl-place">College Georges Sand, Magnanville (78)</div>
+      <div class="tl-body">Obtention du brevet avec mention Bien. Premiers interets marques pour les technologies numeriques.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="experience">
+  <span class="section-tag">Experiences professionnelles</span>
+  <h2 class="section-title reveal">Mon <span>parcours</span></h2>
+  <div class="exp-grid reveal">
+    <div class="exp-card">
+      <div class="exp-header">
+        <div><div class="exp-title">Assistant Communication &amp; Gestion Digitale</div><div class="exp-company">Sport Attitude &mdash; Mantes-la-Jolie</div></div>
+        <span class="exp-date">Sept. 2024 &ndash; Nov. 2025</span>
+      </div>
+      <div class="exp-desc"><ul>
+        <li>Creation de publications pour les reseaux sociaux (Instagram, Facebook)</li>
+        <li>Reponses aux messages et gestion de la boite mail de l'association</li>
+        <li>Mise a jour du site internet de l'association</li>
+      </ul></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-header">
+        <div><div class="exp-title">Developpement &amp; Correction de sites web</div><div class="exp-company">Particuliers &mdash; Buchelay (78)</div></div>
+        <span class="exp-date">2024 &ndash; 2025</span>
+      </div>
+      <div class="exp-desc"><ul>
+        <li>Developpement et correction de sites internet pour des clients particuliers</li>
+        <li>Utilisation de HTML, CSS et JavaScript</li>
+        <li>Prestation de services informatiques en autonomie</li>
+      </ul></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-header">
+        <div><div class="exp-title">Maintenance des systemes informatiques</div><div class="exp-company">Anatomo Cyto Pathologiste &mdash; Vernouillet</div></div>
+        <span class="exp-date">Stage 3eme &mdash; 2022</span>
+      </div>
+      <div class="exp-desc"><ul>
+        <li>Correction des bugs logiciels et erreurs systemes</li>
+        <li>Installation de nouveaux logiciels et mises a niveau</li>
+        <li>Verification de la securite informatique (Firewall, pare-feu)</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets" class="section-alt">
+  <span class="section-tag">Realisations</span>
+  <h2 class="section-title reveal">Mes <span>projets</span></h2>
+  <div class="projects-grid reveal">
+    <div class="project-card">
+      <div class="project-thumb">HTML / CSS</div>
+      <div class="project-body">
+        <div class="project-tags"><span class="p-tag">HTML</span><span class="p-tag">CSS</span><span class="p-tag">JS</span></div>
+        <div class="project-name">Site vitrine &mdash; Sport Attitude</div>
+        <div class="project-desc">Mise a jour et maintenance du site web de l'association sportive Sport Attitude. Gestion du contenu et creation de sections dynamiques.</div>
+        <div class="project-footer">
+          <button class="like-btn" data-id="p1" onclick="toggleLike(this)"><span class="heart">&#x2661;</span><span class="like-count">12</span></button>
+          <a href="#" class="proj-link">Voir le projet &#x2192;</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb">Portfolio</div>
+      <div class="project-body">
+        <div class="project-tags"><span class="p-tag">HTML</span><span class="p-tag">CSS</span><span class="p-tag">Design</span></div>
+        <div class="project-name">Portfolio personnel</div>
+        <div class="project-desc">Conception et developpement complet de ce portfolio. Site one-page responsive avec mode sombre/clair, animations RGB et sections interactives.</div>
+        <div class="project-footer">
+          <button class="like-btn" data-id="p2" onclick="toggleLike(this)"><span class="heart">&#x2661;</span><span class="like-count">28</span></button>
+          <a href="#" class="proj-link">Voir le projet &#x2192;</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb">Security</div>
+      <div class="project-body">
+        <div class="project-tags"><span class="p-tag">Python</span><span class="p-tag">Reseaux</span><span class="p-tag">Securite</span></div>
+        <div class="project-name">Veille CyberSecurite</div>
+        <div class="project-desc">Agregation et analyse de sources de securite informatique. Suivi des CVE et nouvelles vulnerabilites dans le cadre de mes formations MOOC.</div>
+        <div class="project-footer">
+          <button class="like-btn" data-id="p3" onclick="toggleLike(this)"><span class="heart">&#x2661;</span><span class="like-count">7</span></button>
+          <a href="#" class="proj-link">Voir le projet &#x2192;</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb">Social</div>
+      <div class="project-body">
+        <div class="project-tags"><span class="p-tag">Canva</span><span class="p-tag">Instagram</span><span class="p-tag">Community</span></div>
+        <div class="project-name">Gestion reseaux sociaux</div>
+        <div class="project-desc">Creation de publications visuelles pour Instagram et Facebook. Strategie editoriale, design graphique et gestion de la communaute de Sport Attitude.</div>
+        <div class="project-footer">
+          <button class="like-btn" data-id="p4" onclick="toggleLike(this)"><span class="heart">&#x2661;</span><span class="like-count">19</span></button>
+          <a href="#" class="proj-link">Voir le projet &#x2192;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <span class="section-tag">Qualifications</span>
+  <h2 class="section-title reveal">Mes <span>certifications</span></h2>
+  <div class="cert-grid reveal">
+    <div class="cert-card">
+      <div class="cert-num">01</div>
+      <div class="cert-title">Python &mdash; Initiation au developpement</div>
+      <div class="cert-issuer">MOOC / FUN-MOOC</div>
+      <div class="cert-date">2024</div>
+      <span class="cert-tag">Developpement</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-num">02</div>
+      <div class="cert-title">Introduction a la CyberSecurite</div>
+      <div class="cert-issuer">MOOC / OpenClassrooms</div>
+      <div class="cert-date">2024</div>
+      <span class="cert-tag">Securite</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-num">03</div>
+      <div class="cert-title">Reseaux et Administration systeme</div>
+      <div class="cert-issuer">MOOC</div>
+      <div class="cert-date">2024 &ndash; 2025</div>
+      <span class="cert-tag">Infrastructure</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-num">04</div>
+      <div class="cert-title">Baccalaureat Technologique STMG</div>
+      <div class="cert-issuer">Education Nationale</div>
+      <div class="cert-date">Juillet 2025</div>
+      <span class="cert-tag">Diplome d'Etat</span>
+    </div>
+  </div>
+</section>
+
+<!-- BTS SIO -->
+<section id="bts" class="section-alt">
+  <span class="section-tag">Formation</span>
+  <h2 class="section-title reveal">BTS <span>SIO</span></h2>
+  <p class="bts-intro reveal">Le BTS Services Informatiques aux Organisations forme en 2 ans des techniciens polyvalents capables d'intervenir sur l'ensemble du cycle de vie des services informatiques : de la <strong>conception</strong> a la <strong>mise en production</strong>, en passant par l'<strong>exploitation</strong> et la <strong>securisation</strong>.</p>
+  <div class="bts-kpis reveal">
+    <div class="bts-kpi"><span class="big">Bac+2</span><span class="small">Diplome d'Etat reconnu</span></div>
+    <div class="bts-kpi"><span class="big">2 ans</span><span class="small">Formation intensive theorie &amp; pratique</span></div>
+    <div class="bts-kpi"><span class="big">6</span><span class="small">Semaines de stage / alternance par an</span></div>
+  </div>
+  <div class="bts-options reveal">
+    <div class="bts-opt current">
+      <div class="bts-opt-name">Option SISR</div>
+      <div class="bts-opt-desc">Solutions d'Infrastructure, Systemes et Reseaux</div>
+      <ul>
+        <li>Administration de systemes Windows/Linux</li>
+        <li>Configuration et gestion de reseaux</li>
+        <li>Securite informatique &amp; cybersecurite</li>
+        <li>Virtualisation et cloud computing</li>
+        <li>Supervision des infrastructures</li>
+        <li>Support et maintenance des systemes</li>
+      </ul>
+    </div>
+    <div class="bts-opt">
+      <div class="bts-opt-name">Option SLAM</div>
+      <div class="bts-opt-desc">Solutions Logicielles et Applications Metiers</div>
+      <ul>
+        <li>Developpement d'applications web et mobiles</li>
+        <li>Conception de bases de donnees</li>
+        <li>Programmation orientee objet</li>
+        <li>Developpement front-end et back-end</li>
+        <li>Tests et maintenance logicielle</li>
+        <li>Gestion de projets informatiques</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="font-size:1rem;font-weight:700;margin-bottom:18px;" class="reveal">Pourquoi recruter un profil BTS SIO ?</h3>
+  <div class="bts-why reveal">
+    <div class="bts-why-card"><div class="t">Operationnel rapidement</div><div class="d">Formation alliant theorie solide et pratique intensive avec des projets reels.</div></div>
+    <div class="bts-why-card"><div class="t">Certifications MOOC</div><div class="d">Python, Cybersecurite, Reseaux et administration pour renforcer l'expertise.</div></div>
+    <div class="bts-why-card"><div class="t">Polyvalence technique</div><div class="d">Reseau, systeme, developpement, cybersecurite : s'adapte aux besoins IT.</div></div>
+    <div class="bts-why-card"><div class="t">Veille &amp; apprentissage continu</div><div class="d">Veille technologique integree a la formation, profil toujours a jour.</div></div>
+  </div>
+</section>
+
+<!-- ALTERNANCE -->
+<section id="alternance">
+  <span class="section-tag">Recherche active</span>
+  <h2 class="section-title reveal">Recherche d'<span>alternance</span></h2>
+  <div class="stage-box reveal">
+    <div class="live"><span class="dot"></span> En recherche active d'alternance</div>
+    <p>Je suis actuellement a la recherche d'une <strong>entreprise pour mon alternance BTS SIO</strong>. Je suis disponible et motive pour integrer une equipe IT et contribuer a des projets concrets.</p>
+    <div class="stage-meta">
+      <div class="stage-meta-item"><div class="label">Statut</div><div class="value">Recherche active</div></div>
+      <div class="stage-meta-item"><div class="label">Zone</div><div class="value">Ile-de-France (78)</div></div>
+      <div class="stage-meta-item"><div class="label">Mobilite</div><div class="value">Vehicule (Permis B)</div></div>
+      <div class="stage-meta-item"><div class="label">Adresse</div><div class="value">Buchelay, 78200</div></div>
+    </div>
+    <div style="font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text2);margin-bottom:8px;">Domaines recherches</div>
+    <div class="tags">
+      <span class="tag">Administration systeme</span>
+      <span class="tag">Reseaux</span>
+      <span class="tag">Cybersecurite</span>
+      <span class="tag">Infrastructure IT</span>
+      <span class="tag">Support informatique</span>
+    </div>
+  </div>
+</section>
+
+<!-- VEILLE -->
+<section id="veille" class="section-alt">
+  <span class="section-tag">Big Data applique a la cybersecurite</span>
+  <h2 class="section-title reveal">Veille <span>technologique</span></h2>
+  <div class="veille-nav reveal">
+    <a href="#v-intro">Introduction</a>
+    <a href="#v-methodo">Methodologie</a>
+    <a href="#v-tendances">Tendances</a>
+    <a href="#v-articles">Articles</a>
+    <a href="#v-conclusion">Conclusion</a>
+  </div>
+
+  <div id="v-intro" class="veille-step reveal">
+    <div class="veille-num">01</div>
+    <div>
+      <div class="veille-step-title">Introduction</div>
+      <p>La veille technologique consiste a surveiller les evolutions, innovations et tendances dans un domaine informatique afin de rester informe des nouvelles technologies et des menaces emergentes.</p>
+      <br><p>Dans le cadre de mon <strong>BTS SIO</strong>, j'ai choisi comme sujet de veille : <strong>le Big Data applique a la cybersecurite</strong>. Objectifs : detecter les menaces, anticiper les attaques, renforcer la securite.</p>
+    </div>
+  </div>
+
+  <div id="v-methodo" class="veille-step reveal">
+    <div class="veille-num">02</div>
+    <div style="width:100%">
+      <div class="veille-step-title">Methodologie &amp; Outils de veille</div>
+      <p>Ma veille repose sur trois etapes : la <strong>collecte</strong> d'informations, l'<strong>analyse</strong> et le tri, puis la <strong>diffusion</strong>. J'utilise les outils suivants :</p>
+      <div class="veille-tools">
+        <a href="#" class="veille-tool"><span class="tool-name">Google Alerts</span><span class="tool-desc">Surveillance automatique par mots-cles</span></a>
+        <a href="#" class="veille-tool"><span class="tool-name">Feedly</span><span class="tool-desc">Agregation de flux RSS specialises</span></a>
+        <a href="#" class="veille-tool"><span class="tool-name">ANSSI</span><span class="tool-desc">Alertes officielles cybersecurite France</span></a>
+        <a href="#" class="veille-tool"><span class="tool-name">CVE Mitre</span><span class="tool-desc">Base de vulnerabilites connues</span></a>
+        <a href="#" class="veille-tool"><span class="tool-name">Reddit r/netsec</span><span class="tool-desc">Communaute securite informatique</span></a>
+        <a href="#" class="veille-tool"><span class="tool-name">Twitter / X</span><span class="tool-desc">Comptes experts en cybersecurite</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div id="v-tendances" class="veille-step reveal">
+    <div class="veille-num">03</div>
+    <div style="width:100%">
+      <div class="veille-step-title">Tendances actuelles : Big Data &amp; Cybersecurite</div>
+      <p>Le Big Data transforme la detection des menaces en permettant l'analyse en temps reel de volumes massifs de logs et d'evenements reseau.</p>
+      <div class="veille-tendances">
+        <div class="tendance-card"><div class="t-title">SIEM nouvelle generation</div><div class="t-desc">Les outils SIEM (Splunk, IBM QRadar) integrent desormais le machine learning pour detecter les anomalies dans les flux de donnees massifs.</div></div>
+        <div class="tendance-card"><div class="t-title">Zero Trust Architecture</div><div class="t-desc">Modele de securite qui ne fait confiance a aucun utilisateur ni appareil par defaut, meme a l'interieur du reseau.</div></div>
+        <div class="tendance-card"><div class="t-title">IA &amp; Detection d'intrusions</div><div class="t-desc">Les algorithmes de machine learning permettent d'identifier des patterns d'attaques inconnues dans des datasets enormes.</div></div>
+        <div class="tendance-card"><div class="t-title">Threat Intelligence</div><div class="t-desc">Partage de donnees sur les menaces entre organisations pour une defense collective plus efficace.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="v-articles" class="veille-step reveal">
+    <div class="veille-num">04</div>
+    <div style="width:100%">
+      <div class="veille-step-title">Articles &amp; Sources consultes</div>
+      <div class="veille-articles">
+        <div class="article-card">
+          <div><div class="art-source">ANSSI</div><div class="art-title">Panorama de la cybermenace 2024</div><div class="art-desc">Bilan annuel des attaques informatiques en France : ransomware, espionnage et vulnerabilites critiques.</div></div>
+          <a href="#" class="art-link">Lire &#x2192;</a>
+        </div>
+        <div class="article-card">
+          <div><div class="art-source">Le Monde Informatique</div><div class="art-title">L'IA generative transforme la cybersecurite</div><div class="art-desc">Comment les LLMs sont utilises a la fois par les attaquants et les defenseurs pour automatiser les attaques et les analyses.</div></div>
+          <a href="#" class="art-link">Lire &#x2192;</a>
+        </div>
+        <div class="article-card">
+          <div><div class="art-source">ZDNet France</div><div class="art-title">Big Data &amp; SIEM : detecter les menaces en temps reel</div><div class="art-desc">Tour d'horizon des solutions d'analyse massive de logs pour identifier des comportements suspects a grande echelle.</div></div>
+          <a href="#" class="art-link">Lire &#x2192;</a>
+        </div>
+        <div class="article-card">
+          <div><div class="art-source">CISA</div><div class="art-title">Zero Trust Maturity Model</div><div class="art-desc">Guide officiel americain pour implanter l'architecture Zero Trust dans les infrastructures gouvernementales et privees.</div></div>
+          <a href="#" class="art-link">Lire &#x2192;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="v-conclusion" class="veille-step reveal">
+    <div class="veille-num">05</div>
+    <div>
+      <div class="veille-step-title">Conclusion</div>
+      <p>Le Big Data applique a la cybersecurite est une tendance majeure qui redefinit la facon dont les entreprises detectent et repondent aux menaces. L'integration du machine learning dans les SIEM, le modele Zero Trust et la Threat Intelligence collective representent l'avenir de la securite des systemes d'information.</p>
+      <br><p>Cette veille m'a permis de developper une vision claire des enjeux actuels et futurs du domaine, en lien direct avec ma formation BTS SIO option SISR.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIVERS -->
+<section id="divers">
+  <span class="section-tag">Centres d'interet</span>
+  <h2 class="section-title reveal">Divers &amp; <span>Loisirs</span></h2>
+  <div class="divers-grid reveal">
+    <div class="divers-card"><div class="d-title">Jiu-Jitsu Bresilien</div><div class="d-desc">Coach pour les juveniles. Rigueur, discipline et travail d'equipe.</div></div>
+    <div class="divers-card"><div class="d-title">Mecanique automobile</div><div class="d-desc">Entretien et reparation de vehicules. Passion pour la technique.</div></div>
+    <div class="divers-card"><div class="d-title">Permis B</div><div class="d-desc">Vehicule, mobile sur toute l'Ile-de-France.</div></div>
+    <div class="divers-card"><div class="d-title">Sports de combat</div><div class="d-desc">Pratique reguliere. Mental et physique au top.</div></div>
+  </div>
+  <h2 class="section-title reveal" style="margin-top:50px;">Mes <span>langues</span></h2>
+  <div class="langues-grid reveal">
+    <div class="langue-card"><div class="langue-flag">FR</div><div class="langue-name">Francais</div><div class="langue-level">Expert &mdash; Natif</div></div>
+    <div class="langue-card"><div class="langue-flag">EN</div><div class="langue-name">Anglais</div><div class="langue-level">Niveau intermediaire</div></div>
+    <div class="langue-card"><div class="langue-flag">AR</div><div class="langue-name">Arabe</div><div class="langue-level">Notions</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-alt">
+  <span class="section-tag">Parlons-en</span>
+  <h2 class="section-title reveal">Nous <span>contacter</span></h2>
+  <div class="contact-wrapper reveal">
+    <div class="contact-items">
+      <div class="contact-item"><div class="ci-icon"><i class="fa fa-map-marker-alt"></i></div><div><div class="ci-label">Adresse</div><div class="ci-value">30 chemins des meuniers, 78200 Buchelay</div></div></div>
+      <div class="contact-item"><div class="ci-icon"><i class="fa fa-phone"></i></div><div><div class="ci-label">Telephone</div><div class="ci-value"><a href="tel:0762176632">07 62 17 66 32</a></div></div></div>
+      <div class="contact-item"><div class="ci-icon"><i class="fa fa-envelope"></i></div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:chadi.gaouzi@gmail.com">chadi.gaouzi@gmail.com</a></div></div></div>
+      <div class="contact-item"><div class="ci-icon"><i class="fa fa-graduation-cap"></i></div><div><div class="ci-label">Statut</div><div class="ci-value">Recherche alternance BTS SIO</div></div></div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom complet</label><input type="text" id="cName" placeholder="Votre nom"/></div>
+        <div class="form-group"><label>Email</label><input type="email" id="cEmail" placeholder="votre@email.com"/></div>
+      </div>
+      <div class="form-group"><label>Objet</label><input type="text" id="cSubject" placeholder="Proposition d'alternance, question..."/></div>
+      <div class="form-group"><label>Message</label><textarea id="cMsg" rows="5" placeholder="Votre message..."></textarea></div>
+      <button class="send-btn" onclick="handleSend()">
+        <i class="fa fa-paper-plane"></i> Envoyer un message
+      </button>
+      <div class="form-success" id="formSuccess">Message envoye avec succes ! Je vous repondrai tres vite.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Concu et developpe par <strong>Chadi Gaouzi</strong> &mdash; 2025. Tous droits reserves.</p>
+</footer>
+
+<script>
+/* THEME */
+let isDark = true;
+function toggleTheme(){
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('themeIcon').className = isDark ? 'fa fa-moon' : 'fa fa-sun';
+}
+
+/* SKILLS TABS */
+function showTab(id, btn){
+  document.querySelectorAll('.skills-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+  animateBars();
+}
+function animateBars(){
+  document.querySelectorAll('.skills-panel.active .skill-fill').forEach(bar => {
+    bar.style.width = bar.dataset.width + '%';
+  });
+}
+
+/* SCROLL REVEAL */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    }
+  });
+}, {threshold: 0.1});
+revealEls.forEach(el => revealObs.observe(el));
+
+/* NAVBAR ACTIVE LINK */
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+  });
+});
+
+/* LIKE SYSTEM */
+function toggleLike(btn){
+  const countEl = btn.querySelector('.like-count');
+  const heartEl = btn.querySelector('.heart');
+  const n = parseInt(countEl.textContent);
+  if(btn.classList.contains('liked')){
+    btn.classList.remove('liked');
+    heartEl.innerHTML = '&#x2661;';
+    countEl.textContent = n - 1;
+  } else {
+    btn.classList.add('liked');
+    heartEl.innerHTML = '&#x2665;';
+    countEl.textContent = n + 1;
+  }
+}
+
+/* CONTACT FORM */
+function handleSend(){
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const msg = document.getElementById('cMsg').value.trim();
+  if(!name || !email || !msg){ alert('Veuillez remplir tous les champs requis.'); return; }
+  const s = document.getElementById('formSuccess');
+  s.style.display = 'block';
+  setTimeout(() => s.style.display = 'none', 5000);
+  document.getElementById('cName').value = '';
+  document.getElementById('cEmail').value = '';
+  document.getElementById('cSubject').value = '';
+  document.getElementById('cMsg').value = '';
+}
+
+/* INIT */
+window.addEventListener('load', () => animateBars());
+</script>
+</body>
+</html>
